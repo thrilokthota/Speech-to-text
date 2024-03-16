@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for center-aligning the recognized text container */
+        .recognized-text-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="black-bar">
+        <h1 class="title">DOT Speech.text</h1>
+    </div>
+    <div id="recognized-text-container" class="recognized-text-container" style="display: none;">
+        <h3>Recognized Text:</h3>
+        <p id="recognized-text"></p>
+        <h3>Translation:</h3>
+        <p id="translated-text"></p>
+    </div>
+    <div class="container">
+        <h2>Speech to Text Converter</h2>
+        <textarea id="input-text" placeholder="Your speech will appear here..." readonly></textarea>
+        <select id="speech-language-select">
+            <option value="en-US">Speech-English (US)</option>
+            <option value="te-IN">Speech-Telugu (India)</option>
+            <option value="hi-IN">Speech-Hindi (India)</option>
+            <option value="ta-IN">Speech-Tamil (India)</option>
+            <option value="es-ES">Speech-Spanish (Spain)</option>
+            <option value="mr-IN">Speech-Marathi (India)</option>
+            <option value="gu-IN">Speech-Gujarati (India)</option>
+            <option value="bn-BD">Speech-Bangla (Bangladesh)</option>
+            <option value="ur-PK">Speech-Urdu (Pakistan)</option>
+            <option value="af-ZA">Speech-Africaans (South Africa)</option>
+            <option value="ar-SA">Speech-Arabic (Saudi Arabia)</option>
+            <option value="de-DE">Speech-German (Germany)</option>
+            <option value="ja-JP">Speech-Japanese (Japan)</option>
+            <option value="zh-CN">Speech-Chinese (Simplified, China)</option>
+            <option value="zh-HK">Speech-Chinese (Traditional, Hong Kong)</option>
+            <option value="zh-TW">Speech-Chinese (Traditional, Taiwan)</option>
+            <option value="el-GR">Speech-Greek (Greece)</option>
+            <option value="fr-FR">Speech-French (France)</option>
+            <option value="ko-KR">Speech-Korean (South Korea)</option>
+            <option value="kn-IN">Speech-Kannada (India)</option>
+            <option value="ml-IN">Speech-Malayalam (India)</option>
+            <option value="pa-IN">Speech-Punjabi (India)</option>
+        </select>
+        <select id="language-select">
+            <option value="en-US">Text: English (US)</option>
+            <option value="te-IN">Text: Telugu (India)</option>
+            <option value="hi-IN">Text: Hindi (India)</option>
+            <option value="ta-IN">Text: Tamil (India)</option>
+            <option value="es-ES">Text: Spanish (Spain)</option>
+            <option value="mr-IN">Text: Marathi (India)</option>
+            <option value="gu-IN">Text: Gujarati (India)</option>
+            <option value="bn-BD">Text: Bangla (Bangladesh)</option>
+            <option value="ur-PK">Text: Urdu (Pakistan)</option>
+            <option value="af-ZA">Text: Africaans (South Africa)</option>
+            <option value="ar-SA">Text: Arabic (Saudi Arabia)</option>
+            <option value="de-DE">Text: German (Germany)</option>
+            <option value="ja-JP">Text: Japanese (Japan)</option>
+            <option value="zh-CN">Text: Chinese (Simplified, China)</option>
+            <option value="zh-HK">Text: Chinese (Traditional, Hong Kong)</option>
+            <option value="zh-TW">Text: Chinese (Traditional, Taiwan)</option>
+            <option value="el-GR">Text: Greek (Greece)</option>
+            <option value="fr-FR">Text: French (France)</option>
+            <option value="ko-KR">Text: Korean (South Korea)</option>
+            <option value="kn-IN">Text: Kannada (India)</option>
+            <option value="ml-IN">Text: Malayalam (India)</option>
+            <option value="pa-IN">Text: Punjabi (India)</option>
+        </select>
+        <button id="start-btn">Start</button>
+        <button id="stop-btn">Stop</button>
+        <button id="edit-btn">Edit</button>
+        <button id="copy-btn">Copy</button>
+
+        <div class="about">
+            <h3>About :</h3>
+            <p>Our Application aims to provide a convenient tool for converting speech to text. Whether you're dictating notes, transcribing interviews, or simply experimenting with speech recognition technology, our platform is designed to make the process easy and accessible. Feel free to explore and utilize our features to enhance your productivity and communication.</p>
+        </div>
+    </div>
+    <!-- Google AdSense ad unit -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXX" // Replace with your AdSense client ID
+         data-ad-slot="XXXXXXXXXX" // Replace with your AdSense ad slot ID
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
