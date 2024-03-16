@@ -15,13 +15,26 @@ const recognizedTextContainer = document.getElementById('recognized-text-contain
 const speechLanguageSelect = document.getElementById('speech-language-select');
 
 // Function to set language based on selection
-function setLanguage(languageCode) {
+function setRecognitionLanguage(languageCode) {
     recognition.lang = languageCode;
 }
 
+// Function to set translation language based on selection
+function setTranslationLanguage(languageCode) {
+    translatedText.textContent = ""; // Clear previous translation
+    translateText(recognizedText.textContent, languageCode);
+}
+
+// Speech language select change event
+speechLanguageSelect.addEventListener('change', () => {
+    const selectedSpeechLanguage = speechLanguageSelect.value;
+    setRecognitionLanguage(selectedSpeechLanguage);
+});
+
 // Language select change event
 languageSelect.addEventListener('change', () => {
-    setLanguage(languageSelect.value);
+    const selectedTranslationLanguage = languageSelect.value;
+    setTranslationLanguage(selectedTranslationLanguage);
 });
 
 // Start button click event
@@ -52,10 +65,9 @@ recognition.onresult = (event) => {
     recognizedText.textContent = transcript;
     if (transcript.trim() !== '') {
         recognizedTextContainer.style.display = 'block';
-        translateText(transcript, languageSelect.value); // Use selected language for translation
+        setTranslationLanguage(languageSelect.value); // Translate recognized text
     } else {
         recognizedTextContainer.style.display = 'none';
-        translatedText.textContent = '';
     }
 };
 
@@ -78,9 +90,4 @@ recognition.onerror = (event) => {
     console.error('Speech recognition error:', event.error);
 };
 
-// Speech language select change event
-speechLanguageSelect.addEventListener('change', () => {
-    const selectedSpeechLanguage = speechLanguageSelect.value;
-    setLanguage(selectedSpeechLanguage);
-});
 
