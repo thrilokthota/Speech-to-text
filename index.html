@@ -26,6 +26,7 @@
         <h2>Speech to Text Converter</h2>
         <textarea id="input-text" placeholder="Your speech will appear here..." readonly></textarea>
         <select id="speech-language-select">
+            <option value="en-IN">Speech-Indian English</option>
             <option value="en-US">Speech-English (US)</option>
             <option value="te-IN">Speech-Telugu (India)</option>
             <option value="hi-IN">Speech-Hindi (India)</option>
@@ -48,8 +49,10 @@
             <option value="kn-IN">Speech-Kannada (India)</option>
             <option value="ml-IN">Speech-Malayalam (India)</option>
             <option value="pa-IN">Speech-Punjabi (India)</option>
+            <!-- Add other language options here -->
         </select>
         <select id="language-select">
+            <option value="en-IN">Text: Indian English</option>
             <option value="en-US">Text: English (US)</option>
             <option value="te-IN">Text: Telugu (India)</option>
             <option value="hi-IN">Text: Hindi (India)</option>
@@ -72,15 +75,22 @@
             <option value="kn-IN">Text: Kannada (India)</option>
             <option value="ml-IN">Text: Malayalam (India)</option>
             <option value="pa-IN">Text: Punjabi (India)</option>
+            <!-- Add other language options here -->
         </select>
         <button id="start-btn">Start</button>
         <button id="stop-btn">Stop</button>
         <button id="edit-btn">Edit</button>
         <button id="copy-btn">Copy</button>
 
-        <div class="about">
-            <h3>About :</h3>
-            <p>Our Application aims to provide a convenient tool for converting speech to text. Whether you're dictating notes, transcribing interviews, or simply experimenting with speech recognition technology, our platform is designed to make the process easy and accessible. Feel free to explore and utilize our features to enhance your productivity and communication.</p>
+        <!-- Usage instructions -->
+        <div class="usage">
+            <h3>How to Use:</h3>
+            <ol>
+                <li>Click the "Start" button to begin speech recognition.</li>
+                <li>Speak into your device's microphone.</li>
+                <li>The recognized text will appear in the text area.</li>
+                <li>You can edit the text, copy it, or translate it using the available options.</li>
+            </ol>
         </div>
     </div>
     <!-- Google AdSense ad unit -->
@@ -96,4 +106,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
