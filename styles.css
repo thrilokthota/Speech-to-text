@@ -35,3 +35,15 @@ button, select {
     cursor: pointer;
 }
 
+.usage {
+    margin-top: 20px;
+}
+
+.usage ol {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.usage ol li {
+    margin-bottom: 10px;
+}
