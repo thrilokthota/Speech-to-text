@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speech to Text Converter</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional CSS for center-aligning the recognized text container */
-        .recognized-text-container {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="black-bar">
         <h1 class="title">DOT Speech.text</h1>
+        <div class="moving-ball rainbow"></div>
     </div>
     <div id="recognized-text-container" class="recognized-text-container" style="display: none;">
-        <h3>Recognized Text:</h3>
-        <p id="recognized-text"></p>
-        <h3>Translation:</h3>
-        <p id="translated-text"></p>
+        <div class="centered">
+            <h3>Recognized Text:</h3>
+            <p id="recognized-text"></p>
+        </div>
+        <div class="centered">
+            <h3>Translation:</h3>
+            <p id="translated-text"></p>
+        </div>
     </div>
     <div class="container">
         <h2>Speech to Text Converter</h2>
+        <div class="button-group">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="edit-btn">Edit</button>
+            <button id="copy-btn">Copy</button>
+        </div>
         <textarea id="input-text" placeholder="Your speech will appear here..." readonly></textarea>
-        <select id="speech-language-select">
+        <div class="button-group">
+            <select id="speech-language-select">
             <option value="en-IN">Speech-Indian English</option>
             <option value="en-US">Speech-English (US)</option>
             <option value="te-IN">Speech-Telugu (India)</option>
@@ -48,10 +54,10 @@
             <option value="ko-KR">Speech-Korean (South Korea)</option>
             <option value="kn-IN">Speech-Kannada (India)</option>
             <option value="ml-IN">Speech-Malayalam (India)</option>
-            <option value="pa-IN">Speech-Punjabi (India)</option>
-            <!-- Add other language options here -->
-        </select>
-        <select id="language-select">
+            <option value="pa-IN">Speech-Punjabi (India)</option>              
+                <!-- Language options -->
+            </select>
+            <select id="language-select">
             <option value="en-IN">Text: Indian English</option>
             <option value="en-US">Text: English (US)</option>
             <option value="te-IN">Text: Telugu (India)</option>
@@ -74,14 +80,10 @@
             <option value="ko-KR">Text: Korean (South Korea)</option>
             <option value="kn-IN">Text: Kannada (India)</option>
             <option value="ml-IN">Text: Malayalam (India)</option>
-            <option value="pa-IN">Text: Punjabi (India)</option>
-            <!-- Add other language options here -->
-        </select>
-        <button id="start-btn">Start</button>
-        <button id="stop-btn">Stop</button>
-        <button id="edit-btn">Edit</button>
-        <button id="copy-btn">Copy</button>
-
+            <option value="pa-IN">Text: Punjabi (India)</option>              
+                <!-- Text options -->
+            </select>
+        </div>
         <!-- Usage instructions -->
         <div class="usage">
             <h3>How to Use:</h3>
@@ -106,6 +108,5 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 
 
