@@ -8,6 +8,7 @@ body {
     background-color: black;
     padding: 10px 0;
     text-align: center;
+    position: relative; /* Add relative positioning to the black bar */
 }
 
 .title {
@@ -15,11 +16,60 @@ body {
     margin: 0;
 }
 
+.moving-ball {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Rainbow gradient */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Initial position */
+    animation: moveBall 4s linear forwards; /* Animation properties */
+}
+
+@keyframes moveBall {
+    0% {
+        left: -20px; /* Initial position */
+    }
+    50% {
+        left: calc(100% - 20px); /* Move to the end of the black bar */
+    }
+    51% {
+        left: calc(100% - 20px); /* Hold the position until the end of animation */
+    }
+    100% {
+        left: calc(100% - 20px); /* Hold the position until the end of animation */
+    }
+}
+
 .container {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
     padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > * {
+    margin-bottom: 10px; /* Add space between elements */
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button-group > * {
+    margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .button-group {
+        flex-direction: column;
+    }
 }
 
 textarea {
@@ -46,4 +96,8 @@ button, select {
 
 .usage ol li {
     margin-bottom: 10px;
+}
+
+.centered {
+    text-align: center;
 }
