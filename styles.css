@@ -8,7 +8,6 @@ body {
     background-color: black;
     padding: 10px 0;
     text-align: center;
-    position: relative; /* Add relative positioning to the black bar */
 }
 
 .title {
@@ -21,55 +20,44 @@ body {
     height: 20px;
     background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Rainbow gradient */
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: -20px; /* Initial position */
     animation: moveBall 4s linear forwards; /* Animation properties */
 }
 
 @keyframes moveBall {
     0% {
-        left: -20px; /* Initial position */
+        transform: translateX(-100%);
     }
     50% {
-        left: calc(100% - 20px); /* Move to the end of the black bar */
-    }
-    51% {
-        left: calc(100% - 20px); /* Hold the position until the end of animation */
+        transform: translateX(100%);
     }
     100% {
-        left: calc(100% - 20px); /* Hold the position until the end of animation */
+        transform: translateX(100%);
     }
 }
 
 .container {
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
     text-align: center;
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.container > * {
-    margin-bottom: 10px; /* Add space between elements */
+h2 {
+    font-size: 1.5rem;
 }
 
 .button-group {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.button-group > * {
-    margin: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-    .button-group {
-        flex-direction: column;
-    }
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 textarea {
@@ -77,27 +65,62 @@ textarea {
     height: 200px;
     margin-bottom: 20px;
     padding: 10px;
+    resize: none;
 }
 
-button, select {
-    padding: 10px 20px;
-    margin-right: 10px;
-    cursor: pointer;
+select {
+    padding: 10px;
+    font-size: 1rem;
 }
 
 .usage {
-    margin-top: 20px;
-}
-
-.usage ol {
     text-align: left;
     margin-left: 20px;
 }
 
-.usage ol li {
-    margin-bottom: 10px;
+.usage h3 {
+    font-size: 1.2rem;
 }
 
-.centered {
-    text-align: center;
+.usage ol {
+    margin-left: 0;
+    padding-left: 20px;
 }
+
+@media only screen and (min-width: 600px) {
+    .black-bar {
+        padding: 20px 0;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .moving-ball {
+        width: 30px;
+        height: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+
+    textarea {
+        height: 250px;
+    }
+
+    select {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .usage h3 {
+        font-size: 1.4rem;
+    }
+}
+
